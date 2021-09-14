@@ -19,5 +19,6 @@
 + FastJson(如果介意bug,可自行更换为Gson)
 + Aspect
   
-  
+## 食用方法
++ 待定
   
