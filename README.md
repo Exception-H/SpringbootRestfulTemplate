@@ -9,7 +9,7 @@
 + 自定义异常 
 + 全局日志记录(Log4j) 
 + Swagger2接口文档 
-  
++ Smart-Doc
 ## Pom工具
 + Sa-Token
 + Hu-Tool
@@ -18,6 +18,7 @@
 + PageHelper
 + FastJson(如果介意bug,可自行更换为Gson)
 + Aspect
++ Smart-Doc
   
 ## 食用方法
 + 待定

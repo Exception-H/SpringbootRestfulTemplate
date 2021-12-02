@@ -1,7 +1,7 @@
 package com.companyname.common.utils;
 
 import com.alibaba.fastjson.JSONObject;
-import com.companyname.common.enums.impls.CommonEnum;
+import com.companyname.common.enums.impls.ResultCodeEnum;
 import com.companyname.common.enums.interfaces.BaseErrorInfoInterface;
 import lombok.Getter;
 import lombok.Setter;
@@ -55,8 +55,8 @@ public class ResultBody {
      */
     public static ResultBody success(Object data) {
         ResultBody rb = new ResultBody();
-        rb.setCode(CommonEnum.SUCCESS.getResultCode());
-        rb.setMessage(CommonEnum.SUCCESS.getResultMsg());
+        rb.setCode(ResultCodeEnum.SUCCESS.getResultCode());
+        rb.setMessage(ResultCodeEnum.SUCCESS.getResultMsg());
         rb.setResult(data);
         return rb;
     }

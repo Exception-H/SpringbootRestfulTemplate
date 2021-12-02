@@ -1,38 +1,42 @@
 package com.companyname.common.enums.impls;
 
+import com.companyname.common.enums.interfaces.BaseErrorInfoInterface;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-
 
 /**
-*
-* @description:
-* @param :  错误码枚举 - 简易
-* @return :
-* @author : Curtain
-* @date : 2021/9/14
-*/
+ * @className: CommonEnum
+ * @description: 错误码枚举
+ * @author: Curtain
+ * @date: 2021-08-19
+ **/
 @Getter
-@RequiredArgsConstructor
-public enum ResultCodeEnum {
+public enum ResultCodeEnum implements BaseErrorInfoInterface {
+    // 数据操作错误定义
+    SUCCESS("200", "操作成功"),
+    BODY_NOT_MATCH("400","操作失败"),
+    SIGNATURE_NOT_MATCH("401","请求的数字签名不匹配!"),
+    NOT_FOUND("404", "资源不存在!"),
+    INTERNAL_SERVER_ERROR("500", "服务器内部错误!"),
+    SERVER_BUSY("503","服务器正忙，请稍后再试!")
+    ;
+    /** 错误码 */
+    private final String resultCode;
 
-    /**
-     * 成功 200
-     */
-    SUCCESS(200,"操作成功"),
-    /**
-     * 失败 400
-     */
-    FAILURE(400,"操作失败"),
-    /**
-     * 资源不存在 404
-     */
-    UNFOUNDED(404,"资源不存在"),
-    /**
-     * 服务架构异常 500
-     */
-    INTERNAL_ERROR(500,"服务器内部异常");
+    /** 错误描述 */
+    private final String resultMsg;
 
-    private final int code;
-    private final String desc;
+    ResultCodeEnum(String resultCode, String resultMsg) {
+        this.resultCode = resultCode;
+        this.resultMsg = resultMsg;
+    }
+
+    @Override
+    public String getResultCode() {
+        return resultCode;
+    }
+
+    @Override
+    public String getResultMsg() {
+        return resultMsg;
+    }
 }

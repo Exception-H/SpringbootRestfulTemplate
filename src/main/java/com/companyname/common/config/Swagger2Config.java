@@ -25,7 +25,7 @@ public class Swagger2Config {
                 .apiInfo( apiInfo() )
                 .select()
                 // 自行修改为自己的包路径
-                .apis( RequestHandlerSelectors.basePackage( "com.companyname.projectname.controller" ) )
+                .apis( RequestHandlerSelectors.basePackage( "com.companyname.controller" ) )
                 .paths( PathSelectors.any() )
                 .build();
     }

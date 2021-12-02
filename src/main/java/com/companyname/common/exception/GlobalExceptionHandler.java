@@ -1,7 +1,7 @@
 package com.companyname.common.exception;
 
 
-import com.companyname.common.enums.impls.CommonEnum;
+import com.companyname.common.enums.impls.ResultCodeEnum;
 import com.companyname.common.utils.ResultBody;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,7 +46,7 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResultBody exceptionHandler(HttpServletRequest req, NullPointerException e){
         logger.error("发生空指针异常！原因:",e);
-        return ResultBody.error(CommonEnum.BODY_NOT_MATCH);
+        return ResultBody.error(ResultCodeEnum.BODY_NOT_MATCH);
     }
 
 
@@ -60,6 +60,6 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResultBody exceptionHandler(HttpServletRequest req, Exception e){
         logger.error("未知异常！原因:",e);
-        return ResultBody.error(CommonEnum.INTERNAL_SERVER_ERROR);
+        return ResultBody.error(ResultCodeEnum.INTERNAL_SERVER_ERROR);
     }
 }

@@ -1,0 +1,34 @@
+{
+  "outPath": "docs/api-doc/",
+  "dataDictionaries": [
+    {
+      "id": 1,
+      "title": "http状态码字典",
+      "enumClassName": "com.companyname.common.enums.impls.ResultCodeEnum",
+      "codeField": "resultCode",
+      "descField": "resultMsg"
+    }
+  ],
+  "requestHeaders": [
+    {
+      "name": "token名称",
+      "type": "string",
+      "desc": "Token校验",
+      "value": "Sg_7rXjDqAbuFUtmm_OJoAVjKiQ08EuGZ3__",
+      "required": true,
+      "pathPatterns": "/**",
+      "excludePathPatterns": "",
+      "since": "-"
+    }
+  ],
+  "serverUrl": "http://127.0.0.1",
+  "isStrict": false,
+  "packageFilters": "",
+  "projectName": "projectName",
+  "appKey": "",
+  "appToken": "",
+  "secret": "",
+  "openUrl": "http://192.168.x.x:7700/api",
+  "debugEnvName": "项目中文名称",
+  "debugEnvUrl": "http://192.168..x.x"
+}
