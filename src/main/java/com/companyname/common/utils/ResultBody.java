@@ -15,10 +15,10 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class ResultBody {
+public class ResultBody<T> {
     /**
      *  响应代码
-	 */
+     */
     private String code;
 
     /**
@@ -29,7 +29,7 @@ public class ResultBody {
     /**
      * 响应结果
      */
-    private Object result;
+    private T result;
 
     public ResultBody() {
 
@@ -44,7 +44,7 @@ public class ResultBody {
      *
      * @return
      */
-    public static ResultBody success() {
+    public static <T> ResultBody<T> success() {
         return success(null);
     }
 
@@ -53,8 +53,8 @@ public class ResultBody {
      * @param data
      * @return
      */
-    public static ResultBody success(Object data) {
-        ResultBody rb = new ResultBody();
+    public static <T> ResultBody<T> success(T data) {
+        ResultBody<T> rb = new ResultBody<T>();
         rb.setCode(ResultCodeEnum.SUCCESS.getResultCode());
         rb.setMessage(ResultCodeEnum.SUCCESS.getResultMsg());
         rb.setResult(data);
@@ -64,8 +64,8 @@ public class ResultBody {
     /**
      * 失败
      */
-    public static ResultBody error(BaseErrorInfoInterface errorInfo) {
-        ResultBody rb = new ResultBody();
+    public static <T> ResultBody<T> error(BaseErrorInfoInterface errorInfo) {
+        ResultBody<T> rb = new ResultBody<T>();
         rb.setCode(errorInfo.getResultCode());
         rb.setMessage(errorInfo.getResultMsg());
         rb.setResult(null);
@@ -75,8 +75,8 @@ public class ResultBody {
     /**
      * 失败
      */
-    public static ResultBody error(String code, String message) {
-        ResultBody rb = new ResultBody();
+    public static <T> ResultBody<T> error(String code, String message) {
+        ResultBody<T> rb = new ResultBody<T>();
         rb.setCode(code);
         rb.setMessage(message);
         rb.setResult(null);
@@ -86,8 +86,8 @@ public class ResultBody {
     /**
      * 失败
      */
-    public static ResultBody error( String message) {
-        ResultBody rb = new ResultBody();
+    public static <T> ResultBody<T> error( String message) {
+        ResultBody<T> rb = new ResultBody<T>();
         rb.setCode("-1");
         rb.setMessage(message);
         rb.setResult(null);
