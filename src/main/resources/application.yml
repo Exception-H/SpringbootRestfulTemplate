@@ -27,7 +27,7 @@ spring:
       max-open-prepared-statements: 20
 mybatis-plus:
   # MyBaits 别名包扫描路径，通过该属性可以给包中的类注册别名
-  type-aliases-package: com.huanxi.oldclothing.model.po.*
+  type-aliases-package: com.companyname.model.po.*
   # 该配置请和 typeAliasesPackage 一起使用，如果配置了该属性，则仅仅会扫描路径下以该类作为父类的域对象 。
   type-aliases-super-type: java.lang.Object
   configuration:
@@ -41,6 +41,22 @@ mybatis-plus:
     lazy-loading-enabled: true
     # 开启的话，延时加载一个属性时会加载该对象全部属性，否则按需加载属性
     multiple-result-sets-enabled: true
-    use-generated-keys: true
     default-statement-timeout: 60
     default-fetch-size: 100
+  type-enums-package: com.companyname.enums.entityenums
+#sa-token
+sa-token:
+  # token名称
+  token-name: schedulingtoken
+  # token风格
+  token-style: tik
+  # token有效期  30天
+  timeout: 2592000
+  # 是否允许同一账号并发登录
+  is-concurrent: true
+  # 输出日志
+  is-log: true
+  # 是否尝试从请求体里读取token
+  is-read-body: false
+  # 是否尝试从cookie里读取token
+  is-read-cookie: true

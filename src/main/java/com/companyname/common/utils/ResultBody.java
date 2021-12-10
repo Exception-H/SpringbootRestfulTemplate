@@ -1,6 +1,6 @@
 package com.companyname.common.utils;
 
-import com.alibaba.fastjson.JSONObject;
+import cn.hutool.json.JSONObject;
 import com.companyname.common.enums.impls.ResultCodeEnum;
 import com.companyname.common.enums.interfaces.BaseErrorInfoInterface;
 import lombok.Getter;
@@ -96,6 +96,6 @@ public class ResultBody {
 
     @Override
     public String toString() {
-        return JSONObject.toJSONString(this);
+        return JacksonUtil.objToJson(this);
     }
 }
